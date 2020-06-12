@@ -1,5 +1,5 @@
 let stacksize = 1000; // define the size of the image stack
-let clearness = 40;
+let clearness = 10;
 
 function preload() {
   img0 = loadImage('https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/68881794_10157572465227164_5096209456706879488_o.jpg?_nc_cat=103&_nc_sid=2d5d41&_nc_ohc=14c7qbKWUgUAX9j3WNg&_nc_ht=scontent-lht6-1.xx&oh=994d2b9ee23aefca61c6270497eafa63&oe=5EEB8696');
@@ -138,5 +138,6 @@ function setup() {
     img0.resize(0,stacksize);
     image(img0, stacksize/2, stacksize/2, 0, stacksize);
   }
+  saveCanvas('myCanvas', 'jpg');
 
 }
