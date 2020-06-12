@@ -1,8 +1,6 @@
-let stacksize = 1000; // set the size of the image stack
-let clearness = 100; // set the level of transparency of the images
+let stacksize = 1000; // define the size of the image stack
+let clearness = 40;
 
-
-// add image URLs
 function preload() {
   img0 = loadImage('https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/68881794_10157572465227164_5096209456706879488_o.jpg?_nc_cat=103&_nc_sid=2d5d41&_nc_ohc=14c7qbKWUgUAX9j3WNg&_nc_ht=scontent-lht6-1.xx&oh=994d2b9ee23aefca61c6270497eafa63&oe=5EEB8696');
   img1 = loadImage('https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-9/69203664_2492891857610482_6748460457532588032_o.jpg?_nc_cat=110&_nc_sid=110474&_nc_ohc=QPvNpwPQKxIAX_xzIVn&_nc_ht=scontent-lhr8-1.xx&oh=eef76fc448b139e20390cceadfed28f8&oe=5EEBE830');
@@ -18,96 +16,31 @@ function preload() {
 
 function setup() {
 
-// set canvas size to dimensions specified above
   createCanvas(stacksize,stacksize);
 
-// resize images so that biggest side is scaled to size of image stack
-  if (img0.width > img0.height) {
+  if (img9.width > img2.height) {
     tint(255, clearness)
     imageMode(CENTER);
-    img0.resize(stacksize,0);
-    image(img0, stacksize/2, stacksize/2, stacksize,0);
+    img9.resize(stacksize,0);
+    image(img9, stacksize/2, stacksize/2, stacksize, 0);
   } else {
     tint(255, clearness)
     imageMode(CENTER);
-    img0.resize(0,stacksize);
-    image(img0, stacksize/2, stacksize/2, 0, stacksize);
+    img9.resize(0,stacksize);
+    image(img9, stacksize/2, stacksize/2, 0, stacksize);
   }
 
 
-  if (img1.width > img1.height) {
+  if (img8.width > img2.height) {
     tint(255, clearness)
     imageMode(CENTER);
-    img1.resize(stacksize,0);
-    image(img1, stacksize/2, stacksize/2, stacksize, 0);
-  } else {
-    tint(255, 100)
-    imageMode(CENTER);
-    img1.resize(0,stacksize);
-    image(img1, stacksize/2, stacksize/2, 0, stacksize);
-  }
-
-
-  if (img2.width > img2.height) {
-    tint(255, clearness)
-    imageMode(CENTER);
-    img2.resize(stacksize,0);
-    image(img2, stacksize/2, stacksize/2, stacksize, 0);
+    img8.resize(stacksize,0);
+    image(img8, stacksize/2, stacksize/2, stacksize, 0);
   } else {
     tint(255, clearness)
     imageMode(CENTER);
-    img2.resize(0,stacksize);
-    image(img2, stacksize/2, stacksize/2, 0, stacksize);
-  }
-
-  if (img3.width > img2.height) {
-    tint(255, clearness)
-    imageMode(CENTER);
-    img3.resize(stacksize,0);
-    image(img3, stacksize/2, stacksize/2, stacksize, 0);
-  } else {
-    tint(255, clearness)
-    imageMode(CENTER);
-    img3.resize(0,stacksize);
-    image(img3, stacksize/2, stacksize/2, 0, stacksize);
-  }
-
-
-  if (img4.width > img2.height) {
-    tint(255, clearness)
-    imageMode(CENTER);
-    img4.resize(stacksize,0);
-    image(img4, stacksize/2, stacksize/2, stacksize, 0);
-  } else {
-    tint(255, clearness)
-    imageMode(CENTER);
-    img4.resize(0,stacksize);
-    image(img4, stacksize/2, stacksize/2, 0, stacksize);
-  }
-
-  if (img5.width > img2.height) {
-    tint(255, clearness)
-    imageMode(CENTER);
-    img5.resize(stacksize,0);
-    image(img5, stacksize/2, stacksize/2, stacksize, 0);
-  } else {
-    tint(255, clearness)
-    imageMode(CENTER);
-    img5.resize(0,stacksize);
-    image(img5, stacksize/2, stacksize/2, 0, stacksize);
-  }
-
-
-  if (img6.width > img2.height) {
-    tint(255, clearness)
-    imageMode(CENTER);
-    img6.resize(stacksize,0);
-    image(img6, stacksize/2, stacksize/2, stacksize, 0);
-  } else {
-    tint(255, clearness)
-    imageMode(CENTER);
-    img6.resize(0,stacksize);
-    image(img6, stacksize/2, stacksize/2, 0, stacksize);
+    img8.resize(0,stacksize);
+    image(img8, stacksize/2, stacksize/2, 0, stacksize);
   }
 
   if (img7.width > img2.height) {
@@ -122,28 +55,88 @@ function setup() {
     image(img7, stacksize/2, stacksize/2, 0, stacksize);
   }
 
-  if (img8.width > img2.height) {
+  if (img6.width > img2.height) {
     tint(255, clearness)
     imageMode(CENTER);
-    img8.resize(stacksize,0);
-    image(img8, stacksize/2, stacksize/2, stacksize, 0);
+    img6.resize(stacksize,0);
+    image(img6, stacksize/2, stacksize/2, stacksize, 0);
   } else {
     tint(255, clearness)
     imageMode(CENTER);
-    img8.resize(0,stacksize);
-    image(img8, stacksize/2, stacksize/2, 0, stacksize);
+    img6.resize(0,stacksize);
+    image(img6, stacksize/2, stacksize/2, 0, stacksize);
   }
 
-  if (img9.width > img2.height) {
+  if (img5.width > img2.height) {
     tint(255, clearness)
     imageMode(CENTER);
-    img9.resize(stacksize,0);
-    image(img9, stacksize/2, stacksize/2, stacksize, 0);
+    img5.resize(stacksize,0);
+    image(img5, stacksize/2, stacksize/2, stacksize, 0);
   } else {
     tint(255, clearness)
     imageMode(CENTER);
-    img9.resize(0,stacksize);
-    image(img9, stacksize/2, stacksize/2, 0, stacksize);
+    img5.resize(0,stacksize);
+    image(img5, stacksize/2, stacksize/2, 0, stacksize);
+  }
+
+  if (img4.width > img2.height) {
+    tint(255, clearness)
+    imageMode(CENTER);
+    img4.resize(stacksize,0);
+    image(img4, stacksize/2, stacksize/2, stacksize, 0);
+  } else {
+    tint(255, clearness)
+    imageMode(CENTER);
+    img4.resize(0,stacksize);
+    image(img4, stacksize/2, stacksize/2, 0, stacksize);
+  }
+
+  if (img3.width > img2.height) {
+    tint(255, clearness)
+    imageMode(CENTER);
+    img3.resize(stacksize,0);
+    image(img3, stacksize/2, stacksize/2, stacksize, 0);
+  } else {
+    tint(255, clearness)
+    imageMode(CENTER);
+    img3.resize(0,stacksize);
+    image(img3, stacksize/2, stacksize/2, 0, stacksize);
+  }
+
+  if (img2.width > img2.height) {
+    tint(255, clearness)
+    imageMode(CENTER);
+    img2.resize(stacksize,0);
+    image(img2, stacksize/2, stacksize/2, stacksize, 0);
+  } else {
+    tint(255, clearness)
+    imageMode(CENTER);
+    img2.resize(0,stacksize);
+    image(img2, stacksize/2, stacksize/2, 0, stacksize);
+  }
+
+  if (img1.width > img1.height) {
+    tint(255, clearness)
+    imageMode(CENTER);
+    img1.resize(stacksize,0);
+    image(img1, stacksize/2, stacksize/2, stacksize, 0);
+  } else {
+    tint(255, clearness)
+    imageMode(CENTER);
+    img1.resize(0,stacksize);
+    image(img1, stacksize/2, stacksize/2, 0, stacksize);
+  }
+
+  if (img0.width > img0.height) {
+    tint(255, clearness)
+    imageMode(CENTER);
+    img0.resize(stacksize,0);
+    image(img0, stacksize/2, stacksize/2, stacksize,0);
+  } else {
+    tint(255, clearness)
+    imageMode(CENTER);
+    img0.resize(0,stacksize);
+    image(img0, stacksize/2, stacksize/2, 0, stacksize);
   }
 
 }
