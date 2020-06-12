@@ -1,4 +1,4 @@
-let stacksize = 1000;
+let stacksize = 1000; // define the size of the image stack
 let clearness = 100;
 
 function preload() {
