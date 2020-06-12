@@ -1,6 +1,8 @@
-let stacksize = 1000; // define the size of the image stack
-let clearness = 100;
+let stacksize = 1000; // set the size of the image stack
+let clearness = 100; // set the level of transparency of the images
 
+
+// add image URLs
 function preload() {
   img0 = loadImage('https://scontent-lht6-1.xx.fbcdn.net/v/t1.0-9/68881794_10157572465227164_5096209456706879488_o.jpg?_nc_cat=103&_nc_sid=2d5d41&_nc_ohc=14c7qbKWUgUAX9j3WNg&_nc_ht=scontent-lht6-1.xx&oh=994d2b9ee23aefca61c6270497eafa63&oe=5EEB8696');
   img1 = loadImage('https://scontent-lhr8-1.xx.fbcdn.net/v/t1.0-9/69203664_2492891857610482_6748460457532588032_o.jpg?_nc_cat=110&_nc_sid=110474&_nc_ohc=QPvNpwPQKxIAX_xzIVn&_nc_ht=scontent-lhr8-1.xx&oh=eef76fc448b139e20390cceadfed28f8&oe=5EEBE830');
@@ -16,8 +18,10 @@ function preload() {
 
 function setup() {
 
+// set canvas size to dimensions specified above
   createCanvas(stacksize,stacksize);
 
+// resize images so that biggest side is scaled to size of image stack
   if (img0.width > img0.height) {
     tint(255, clearness)
     imageMode(CENTER);
