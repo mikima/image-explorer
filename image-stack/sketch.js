@@ -1,7 +1,7 @@
 let stacksize = 1000; // define the size of the image stack
-let clearness = 100;
+let clearness = 100; // set transparency levels
 
-let imagesStack = [] // use an array so you can interate among them
+let imagesStack = [] // set up array
 
 function preload() {
   // you can put as many images you want in the array
@@ -20,9 +20,8 @@ function preload() {
 function setup() {
 
   imagesStack = imagesStack.reverse();
-  // i'm reversing the array only because in your
-  // script you started from the last one and ended with the first one.
-  // But it won't be necessary if the order in the preload is already the correct one
+  // reverse the images in the array (so that first images are loaded last.
+  // This may be useful, e.g., where the most prominent images should be most visible in the stack.
 
 
   createCanvas(stacksize,stacksize);
@@ -30,8 +29,6 @@ function setup() {
   // istead of rewriting the operation for each image,
   // we can use a for loop.
   // for each image in the 'imagesStack' array, we perform the same operations
-  // If you're not familiar with the notation, online it's plenty of tutorial
-  // I'ts a quite standard notation
 
   for(let i = 0; i < imagesStack.length; i++) {
 
