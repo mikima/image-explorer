@@ -1,4 +1,4 @@
-# Image Explorer 🌌🏞🎑🌇🌁🔭
+# 🌌🏞🎑🌇🌁🔭
 
 [**Image Explorer**](https://jwyg.github.io/image-explorer/) is a set of browser-based tools for the visual exploration of image collections.
 
