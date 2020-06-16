@@ -1,5 +1,10 @@
 let stacksize = 1000; // define the size of the image stack
+let canvasspace = 100; // define the space around the image stack
+let canvassize = stacksize + (canvasspace * 2);
 let clearness = 100; // set transparency levels
+let savebutton;
+let savebuttonx = 520;
+let savebuttony = (canvasspace/2);
 
 let imagesStack = [] // set up array
 
@@ -19,12 +24,18 @@ function preload() {
 
 function setup() {
 
-  imagesStack = imagesStack.reverse();
+  slider = createSlider(0, 255, 100);
+  slider.position(canvasspace, canvasspace/2);
+  slider.style('width', '400px');
+  savebutton = createButton('Save image');
+  savebutton.position(savebuttonx, savebuttony);
+  savebutton.mousePressed(saveimg);
+
   // reverse the images in the array (so that first images are loaded last.
   // This may be useful, e.g., where the most prominent images should be most visible in the stack.
+  imagesStack = imagesStack.reverse();
 
-
-  createCanvas(stacksize,stacksize);
+  createCanvas(canvassize,canvassize);
 
   // istead of rewriting the operation for each image,
   // we can use a for loop.
@@ -40,15 +51,39 @@ function setup() {
 	    tint(255, clearness)
 	    imageMode(CENTER);
 	    currentImage.resize(stacksize,0);
-	    image(currentImage, stacksize/2, stacksize/2, stacksize,0);
+	    image(currentImage, canvassize/2, canvassize/2, stacksize,0);
 	  } else {
 	    tint(255, clearness)
 	    imageMode(CENTER);
 	    currentImage.resize(0,stacksize);
-	    image(currentImage, stacksize/2, stacksize/2, 0, stacksize);
+	    image(currentImage, canvassize/2, canvassize/2, 0, stacksize);
 	  }
   }
+}
 
+
+function mouseReleased () {
+  clearness = slider.value();
+  for(let i = 0; i < imagesStack.length; i++) {
+
+    // load the image contained in the 'imagesStack' array at index 'i'
+    // and put it in a temporary variable called 'currentImage'
+    let currentImage = imagesStack[i];
+
+    if (currentImage.width > currentImage.height) {
+      tint(255, clearness)
+      imageMode(CENTER);
+      currentImage.resize(stacksize,0);
+      image(currentImage, canvassize/2, canvassize/2, stacksize,0);
+    } else {
+      tint(255, clearness)
+      imageMode(CENTER);
+      currentImage.resize(0,stacksize);
+      image(currentImage, canvassize/2, canvassize/2, 0, stacksize);
+    }
+  }
+}
+
+function saveimg() {
   saveCanvas('myCanvas', 'jpg');
-
 }
