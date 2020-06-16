@@ -12,6 +12,8 @@ It is inspired by recent work on [visual methods](https://www.zotero.org/groups/
 
 Enables the creation of an "image stack" from a set of image URLs as well as customising transparency levels and canvas size.
 
+Follows from recent work on "composite images" (Pearce et al, 2018; Niederer & Colombo, 2019).
+
 * [Demo](https://jwyg.github.io/image-explorer/image-stack)
 * [P5 code](https://github.com/jwyg/image-explorer/blob/gh-pages/image-stack/sketch.js)
 
