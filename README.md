@@ -1,4 +1,4 @@
-# Image Explorer
+# Image Explorer 🌌🏞🎑🌇🌁🔭
 
 **Image Explorer** is a set of tools for the visual exploration of image collections on the web.
 
