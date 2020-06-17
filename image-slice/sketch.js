@@ -5,6 +5,12 @@ let clearness = 100; // set transparency levels
 let savebutton;
 let savebuttonx = 520;
 let savebuttony = (canvasspace/2);
+let imagecount = 1;
+let imagex;
+let imagey;
+let imagesegment;
+let sel;
+var imageblendmode;
 
 let imagesStack = [] // set up array
 
@@ -24,9 +30,32 @@ function preload() {
 
 function setup() {
 
-  slider = createSlider(0, 255, 100);
-  slider.position(canvasspace, canvasspace/2);
-  slider.style('width', '400px');
+  //count number of images
+  imagenumber = imagesStack.length;
+  imagesegment = stacksize/imagenumber;
+
+  sel = createSelect();
+  sel.option('BLEND');
+  sel.option('DARKEST');
+  sel.option('LIGHTEST');
+  sel.option('DIFFERENCE');
+  sel.option('MULTIPLY');
+  sel.option('EXCLUSION');
+  sel.option('SCREEN');
+  sel.option('REPLACE');
+  sel.option('OVERLAY');
+  sel.option('HARD_LIGHT');
+  sel.option('SOFT_LIGHT');
+  sel.option('DODGE');
+  sel.option('BURN');
+  sel.option('ADD');
+  sel.option('NORMAL');
+  sel.selected('NORMAL');
+  sel.changed(mySelectEvent);
+  sel.position(canvasspace, canvasspace/2);
+
+  imageblendmode = sel.value();
+
   savebutton = createButton('Save image');
   savebutton.position(savebuttonx, savebuttony);
   savebutton.mousePressed(saveimg);
@@ -47,40 +76,48 @@ function setup() {
 	  // load the image contained in the 'imagesStack' array at index 'i'
 	  // and put it in a temporary variable called 'currentImage'
 	  let currentImage = imagesStack[i];
+    imagecount++;
+    imagex = (imagecount - 1) * imagesegment;
+    imagey = canvasspace;
+    imagew = imagesegment * imagecount;
+    imageh = stacksize;
 
 	  if (currentImage.width > currentImage.height) {
-	    tint(255, clearness)
-	    imageMode(CENTER);
 	    currentImage.resize(stacksize,0);
-	    image(currentImage, width/2, height/2, stacksize,0);
+      blend(currentImage, imagex, imagey, imagew, imageh, imagex, imagey, imagew, imageh, imageblendmode);
 	  } else {
-	    tint(255, clearness)
-	    imageMode(CENTER);
 	    currentImage.resize(0,stacksize);
-	    image(currentImage, width/2, height/2, 0, stacksize);
+      blend(currentImage, imagex, imagey, imagew, imageh, imagex, imagey, imagew, imageh, imageblendmode);
 	  }
   }
 }
 
-function mouseReleased () {
-  clearness = slider.value();
+
+function mySelectEvent () {
+
+  imageblendmode = sel.value();
+  print(imageblendmode);
+  imagecount = 1
+
   for(let i = 0; i < imagesStack.length; i++) {
 
-    // load the image contained in the 'imagesStack' array at index 'i'
-    // and put it in a temporary variable called 'currentImage'
-    let currentImage = imagesStack[i];
+	  // load the image contained in the 'imagesStack' array at index 'i'
+	  // and put it in a temporary variable called 'currentImage'
+	  let currentImage = imagesStack[i];
 
-    if (currentImage.width > currentImage.height) {
-      tint(255, clearness)
-      imageMode(CENTER);
-      currentImage.resize(stacksize,0);
-      image(currentImage, width/2, height/2, stacksize,0);
-    } else {
-      tint(255, clearness)
-      imageMode(CENTER);
-      currentImage.resize(0,stacksize);
-      image(currentImage, width/2, height/2, 0, stacksize);
-    }
+    imagecount++;
+    imagex = (imagecount - 1) * imagesegment;
+    imagey = canvasspace;
+    imagew = imagesegment * imagecount;
+    imageh = stacksize;
+
+	  if (currentImage.width > currentImage.height) {
+	    currentImage.resize(stacksize,0);
+      blend(currentImage, imagex, imagey, imagew, imageh, imagex, imagey, imagew, imageh, imageblendmode);
+	  } else {
+	    currentImage.resize(0,stacksize);
+      blend(currentImage, imagex, imagey, imagew, imageh, imagex, imagey, imagew, imageh, imageblendmode);
+	  }
   }
 }
 
