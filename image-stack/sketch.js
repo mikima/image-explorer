@@ -51,12 +51,12 @@ function setup() {
 	    tint(255, clearness)
 	    imageMode(CENTER);
 	    currentImage.resize(stacksize,0);
-	    image(currentImage, canvassize/2, canvassize/2, stacksize,0);
+	    image(currentImage, width/2, height/2, stacksize,0);
 	  } else {
 	    tint(255, clearness)
 	    imageMode(CENTER);
 	    currentImage.resize(0,stacksize);
-	    image(currentImage, canvassize/2, canvassize/2, 0, stacksize);
+	    image(currentImage, width/2, height/2, 0, stacksize);
 	  }
   }
 }
@@ -74,12 +74,12 @@ function mouseReleased () {
       tint(255, clearness)
       imageMode(CENTER);
       currentImage.resize(stacksize,0);
-      image(currentImage, canvassize/2, canvassize/2, stacksize,0);
+      image(currentImage, width/2, height/2, stacksize,0);
     } else {
       tint(255, clearness)
       imageMode(CENTER);
       currentImage.resize(0,stacksize);
-      image(currentImage, canvassize/2, canvassize/2, 0, stacksize);
+      image(currentImage, width/2, height/2, 0, stacksize);
     }
   }
 }
