@@ -2,9 +2,9 @@
 
 [**Image Explorer**](https://jwyg.github.io/image-explorer/) is a set of browser-based tools for the visual exploration of image collections.
 
-It is created using [P5.js](https://p5js.org/) and intended to work alongside other web-based tools and libraries for repurposing web and social media data such as those from the [Digital Methods Initiative](https://tools.digitalmethods.net/) and the [médialab, Sciences Po, Paris](http://tools.medialab.sciences-po.fr/).
-
 It is inspired by recent work on [visual methods](https://www.zotero.org/groups/visual_methods) in the context of internet studies and new media research.
+
+It is created using [P5.js](https://p5js.org/) and intended to work alongside other web-based tools and libraries for repurposing web and social media data such as those from the [Digital Methods Initiative](https://tools.digitalmethods.net/) and the [médialab, Sciences Po, Paris](http://tools.medialab.sciences-po.fr/).
 
 ## Overview of functions
 
