@@ -43,7 +43,7 @@ Enables the creation of an "image blend" from a set of image URLs, including exp
 
 ## How to use 🎒
 
-1. Use on the web at https://jwyg.github.io/image-explorer/ (*to do: enable import of image URLs*)
+1. Use on the web at <https://jwyg.github.io/image-explorer/> (*to do: enable import of image URLs*)
 2. [Download](https://github.com/jwyg/image-explorer/archive/gh-pages.zip) the [repository](https://github.com/jwyg/image-explorer), modify P5 files and open using a web browser
 3. [Fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the [repository](https://github.com/jwyg/image-explorer),  modify accordingly
 
