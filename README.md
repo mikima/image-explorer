@@ -33,7 +33,7 @@ Enables the creation of an "image blend" from a set of image URLs, including exp
 * [Demo](https://jwyg.github.io/image-explorer/image-blend)
 * [P5 code](https://github.com/jwyg/image-explorer/blob/gh-pages/image-blend/sketch.js)
 
-![](https://i.imgur.com/ovyCEtF.jpg?1)
+![](https://i.imgur.com/Fhvg8WF.jpg?1)
 
 # 🍱 Image Grid
 
