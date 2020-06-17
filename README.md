@@ -10,7 +10,7 @@ It is created using [P5.js](https://p5js.org/) and intended to work alongside ot
 
 ### Image Stack 🥞
 
-Enables the creation of an "image stack" from a set of image URLs as well as customising transparency levels and canvas size.
+Enables the creation of an "image stack" from a set of image URLs.
 
 Follows from recent work on "composite images" (Pearce et al, 2018; Niederer & Colombo, 2019).
 
@@ -21,7 +21,12 @@ Follows from recent work on "composite images" (Pearce et al, 2018; Niederer & C
 
 ### Image Slice 🍉
 
-*To do: Enables the creation of an "image slice" from a set of image URLs, including the display of full version of each image on click/rollover. See [roadmap](https://github.com/jwyg/image-explorer/projects/1).*
+Enables the creation of an "image slice" from a set of image URLs.
+
+* [Demo](https://jwyg.github.io/image-explorer/image-slice)
+* [P5 code](https://github.com/jwyg/image-explorer/tree/gh-pages/image-slice)
+
+![](https://i.imgur.com/0dRkePE.jpg?2)
 
 ### Image Grid 🍱
 
