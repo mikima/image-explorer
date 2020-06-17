@@ -74,7 +74,7 @@ function setup() {
 	  // load the image contained in the 'imagesStack' array at index 'i'
 	  // and put it in a temporary variable called 'currentImage'
 	  let currentImage = imagesStack[i];
-    imagecount++;
+    imagecount = i;
 
 	  if (currentImage.width > currentImage.height) {
 	    currentImage.resize(0,stacksize);
@@ -82,14 +82,14 @@ function setup() {
       imagey = canvasspace;
       imagew = imagesegment;
       imageh = stacksize;
-      blend(currentImage, imagex, imagey, imagew, imageh, imagex, imagey, imagew, imageh, sel.value());
+      blend(currentImage, imagex, 0, imagew, imageh, (imagex + canvasspace), imagey, imagew, imageh, sel.value());
 	  } else {
 	    currentImage.resize(0,stacksize);
       imagex = canvasspace + ((imagecount - 1) * imagesegment);
       imagey = canvasspace;
       imagew = imagesegment;
       imageh = stacksize;
-      blend(currentImage, imagex, imagey, imagew, imageh, imagex, imagey, imagew, imageh, sel.value());
+      blend(currentImage, imagex, 0, imagew, imageh, (imagex + canvasspace), imagey, imagew, imageh, sel.value());
 	  }
   }
 }
@@ -97,29 +97,27 @@ function setup() {
 
 function mySelectEvent () {
 
-  imagecount = 0
-
   for(let i = 0; i < imagesStack.length; i++) {
 
 	  // load the image contained in the 'imagesStack' array at index 'i'
 	  // and put it in a temporary variable called 'currentImage'
 	  let currentImage = imagesStack[i];
-    imagecount++;
+    imagecount = i;
 
 	  if (currentImage.width > currentImage.height) {
 	    currentImage.resize(0,stacksize);
-      imagex = canvasspace + ((imagecount - 1) * imagesegment);
-      imagey = canvasspace ;
+      imagex = canvasspace + ((imagecount - 1)* imagesegment);
+      imagey = canvasspace;
       imagew = imagesegment;
       imageh = stacksize;
-      blend(currentImage, imagex, imagey, imagew, imageh, imagex, imagey, imagew, imageh, sel.value());
+      blend(currentImage, imagex, 0, imagew, imageh, (imagex + canvasspace), imagey, imagew, imageh, sel.value());
 	  } else {
 	    currentImage.resize(0,stacksize);
       imagex = canvasspace + ((imagecount - 1) * imagesegment);
       imagey = canvasspace;
       imagew = imagesegment;
       imageh = stacksize;
-      blend(currentImage, imagex, imagey, imagew, imageh, imagex, imagey, imagew, imageh, sel.value());
+      blend(currentImage, imagex, 0, imagew, imageh, (imagex + canvasspace), imagey, imagew, imageh, sel.value());
 	  }
   }
 }

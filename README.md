@@ -26,7 +26,7 @@ Enables the creation of an "image slice" from a set of image URLs.
 * [Demo](https://jwyg.github.io/image-explorer/image-slice)
 * [P5 code](https://github.com/jwyg/image-explorer/blob/gh-pages/image-slice/sketch.js)
 
-![](https://i.imgur.com/0dRkePE.jpg?2)
+![](https://i.imgur.com/lVT9R43.jpg?1)
 
 ### Image Blend 🍹
 
