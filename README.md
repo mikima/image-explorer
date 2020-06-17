@@ -24,17 +24,22 @@ Follows from recent work on "composite images" (Pearce et al, 2018; Niederer & C
 Enables the creation of an "image slice" from a set of image URLs.
 
 * [Demo](https://jwyg.github.io/image-explorer/image-slice)
-* [P5 code](https://github.com/jwyg/image-explorer/tree/gh-pages/image-slice)
+* [P5 code](https://github.com/jwyg/image-explorer/blob/gh-pages/image-slice/sketch.js)
 
 ![](https://i.imgur.com/0dRkePE.jpg?2)
+
+### Image Blend 🍹
+
+Enables the creation of an "image blend" from a set of image URLs, including experimentation with [different P5 blend modes](https://p5js.org/reference/#/p5/blend).
+
+* [Demo](https://jwyg.github.io/image-explorer/image-blend)
+* [P5 code](https://github.com/jwyg/image-explorer/blob/gh-pages/image-blend/sketch.js)
+
+![](https://i.imgur.com/ovyCEtF.jpg?1)
 
 ### Image Grid 🍱
 
 *To do: Enables the creation of an "image grid" from a set of image URLs, including the display of a larger version of the image on click/rollover. See [roadmap](https://github.com/jwyg/image-explorer/projects/1).*
-
-### Image Blend 🍹
-
-*To do: Enables the creation of an "image blend" from a set of image URLs, including experimentation with [different P5 blend modes](https://p5js.org/reference/#/p5/blend). See [roadmap](https://github.com/jwyg/image-explorer/projects/1).*
 
 ## How to use 🎒
 
