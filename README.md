@@ -45,6 +45,14 @@ Enables the creation of an "image blend" from a set of image URLs, including exp
 2. [Download](https://github.com/jwyg/image-explorer/archive/gh-pages.zip) the [repository](https://github.com/jwyg/image-explorer), modify P5 files and open using a web browser
 3. [Fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) the [repository](https://github.com/jwyg/image-explorer),  modify accordingly
 
+# 🎏 How to help
+
+You can see the roadmap [here](https://github.com/jwyg/image-explorer/projects/1).
+
+# 🙈 If you get stuck
+
+You can add an issue [here](https://github.com/jwyg/image-explorer/issues).
+
 # 📖 Reading and links
 
 * [Visual methods Zotero bibliography](https://www.zotero.org/groups/visual_methods)
