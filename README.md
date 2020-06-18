@@ -1,9 +1,5 @@
 # 🌌🏞🎑🌇🌁🔭
 
-> .. the visual is central to the cultural construction of social life
-
-> –– Rose, G. (2016). *Visual Methodologies: An Introduction to Researching with Visual Materials (Fourth Edition)*. London: SAGE Publications.
-
 > The poor image is a copy in motion. Its quality is bad, its resolution substandard. As it accelerates, it deteriorates. It is a ghost of an image, a preview, a thumbnail, an errant idea, an itinerant image distributed for free, squeezed through slow digital connections, compressed, reproduced, ripped, remixed, as well as copied and pasted into other channels of distribution.
 
 > –– Steyerl, H. (2012). [In Defense of the Poor Image](https://www.e-flux.com/journal/10/61362/in-defense-of-the-poor-image/). In *The Wretched of the Screen*. Berlin: Sternberg Press.
