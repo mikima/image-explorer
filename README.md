@@ -4,6 +4,8 @@
 
 > –– Steyerl, H. (2012). [In Defense of the Poor Image](https://www.e-flux.com/journal/10/61362/in-defense-of-the-poor-image/). In *The Wretched of the Screen*. Berlin: Sternberg Press.
 
+***
+
 [**Image Explorer**](https://jwyg.github.io/image-explorer/) is a set of browser-based tools for the visual exploration of image collections.
 
 It is inspired by recent work on [visual methods](https://www.zotero.org/groups/visual_methods) in the context of internet studies and new media research.
