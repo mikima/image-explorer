@@ -1,34 +1,31 @@
 let stacksize = 1000; // define the size of the image stack
 let canvasspace = 100; // define the space around the image stack
+let canvasspacey = 160;
 let canvassize = stacksize + (canvasspace * 2);
 let clearness = 100; // set transparency levels
-let savebutton;
+let savebutton, textarea, loadbutton, urls;
 let savebuttonx = 220;
-let savebuttony = (canvasspace/2);
+let savebuttony = (canvasspace/2)+160;
 let imagecount = 0;
 let imagex;
 let imagey;
 let imagesegment;
 let sel;
 
-let imagesStack = [] // set up array
-
+let imagesStack = []; // set up array
 function preload() {
-  // you can put as many images you want in the array
-  imagesStack[0] = loadImage('https://pbs.twimg.com/media/ECpd2aLU8AEq5v5.jpg');
-  imagesStack[1] = loadImage('https://pbs.twimg.com/ext_tw_video_thumb/1166750163517550592/pu/img/7wexKT4MWmBexVgc.jpg');
-  imagesStack[2] = loadImage('https://pbs.twimg.com/ext_tw_video_thumb/1165573527799566336/pu/img/XyWQQcwKkNyNSOLd.jpg');
-  imagesStack[3] = loadImage('https://pbs.twimg.com/media/ECqt8TdVAAECAjG.jpg');
-  imagesStack[4] = loadImage('https://pbs.twimg.com/tweet_video_thumb/ECrwf-yU0AABxDL.jpg');
-  imagesStack[5] = loadImage('https://pbs.twimg.com/media/EC0DTueVAAEDV8u.jpg');
-  imagesStack[6] = loadImage('https://pbs.twimg.com/media/EC0DUyhU0AY8LEh.jpg');
-  imagesStack[7] = loadImage('https://pbs.twimg.com/media/EC0DUUNU0AI-gyP.jpg');
-  imagesStack[8] = loadImage('https://pbs.twimg.com/ext_tw_video_thumb/1163916283307540480/pu/img/r1gelCcI--jn2Fls.jpg');
-  imagesStack[9] = loadImage('https://pbs.twimg.com/ext_tw_video_thumb/1165037625897553920/pu/img/pwQGsiiHfbTLZhvJ.jpg');
+  urls = localStorage.getItem("urls"); //load previously saved data from localstorage
+  if(urls){ //skips if no data before
+	  urls = urls.split("\n"); //every line contains a new url
+	  for(let i=0; i<urls.length; i++){
+		if(urls[i].trim()!=""){
+		  imagesStack[i] = loadImage(urls[i]); //load images from localstorage lines
+		}
+	  }
+  }
 }
 
 function setup() {
-
   //count number of images
   imagenumber = imagesStack.length;
   imagesegment = stacksize/imagenumber;
@@ -52,7 +49,22 @@ function setup() {
   sel.option(NORMAL);
   sel.selected(NORMAL);
   sel.changed(mySelectEvent);
-  sel.position(canvasspace, (canvasspace / 2));
+  sel.position(canvasspace, (canvasspace / 2)+160);
+
+  //Display the textarea and assign a class
+  textarea = createElement("textarea");
+  textarea.position(canvasspace, (canvasspace / 2));
+  textarea.class("image-inputs");
+  textarea.size(400,100);
+  if(urls){ //if urls exist in localstorage just put it in the textarea and clear the localstorage
+	  textarea.value(urls.join("\n"));
+	  localStorage.removeItem("urls");
+  }
+
+  //Display the loadimages button and bind its event handler
+  loadbutton = createButton('Load Images');
+  loadbutton.position(canvasspace, savebuttony-40);
+  loadbutton.mousePressed(loadimgs);
 
   savebutton = createButton('Save image');
   savebutton.position(savebuttonx, savebuttony);
@@ -68,7 +80,6 @@ function setup() {
   // istead of rewriting the operation for each image,
   // we can use a for loop.
   // for each image in the 'imagesStack' array, we perform the same operations
-
   for(let i = 0; i < imagesStack.length; i++) {
 
 	  // load the image contained in the 'imagesStack' array at index 'i'
@@ -79,14 +90,14 @@ function setup() {
 	  if (currentImage.width > currentImage.height) {
 	    currentImage.resize(0,stacksize);
       imagex = canvasspace + ((imagecount - 1) * imagesegment);
-      imagey = canvasspace;
+      imagey = canvasspace+canvasspacey;
       imagew = imagesegment;
       imageh = stacksize;
       blend(currentImage, imagex, 0, imagew, imageh, (imagex + canvasspace), imagey, imagew, imageh, sel.value());
 	  } else {
 	    currentImage.resize(0,stacksize);
       imagex = canvasspace + ((imagecount - 1) * imagesegment);
-      imagey = canvasspace;
+      imagey = canvasspace+canvasspacey;
       imagew = imagesegment;
       imageh = stacksize;
       blend(currentImage, imagex, 0, imagew, imageh, (imagex + canvasspace), imagey, imagew, imageh, sel.value());
@@ -107,19 +118,25 @@ function mySelectEvent () {
 	  if (currentImage.width > currentImage.height) {
 	    currentImage.resize(0,stacksize);
       imagex = canvasspace + ((imagecount - 1)* imagesegment);
-      imagey = canvasspace;
+      imagey = canvasspace+canvasspacey;
       imagew = imagesegment;
       imageh = stacksize;
       blend(currentImage, imagex, 0, imagew, imageh, (imagex + canvasspace), imagey, imagew, imageh, sel.value());
 	  } else {
 	    currentImage.resize(0,stacksize);
       imagex = canvasspace + ((imagecount - 1) * imagesegment);
-      imagey = canvasspace;
+      imagey = canvasspace+canvasspacey;
       imagew = imagesegment;
       imageh = stacksize;
       blend(currentImage, imagex, 0, imagew, imageh, (imagex + canvasspace), imagey, imagew, imageh, sel.value());
 	  }
   }
+}
+
+function loadimgs(){
+  //Simply save the data in localstorage and reload the page, so that nexttime on pageload the images will be read from localstorage and initiated in p5
+  localStorage.setItem("urls",textarea.value());
+  location.reload();
 }
 
 function saveimg() {
