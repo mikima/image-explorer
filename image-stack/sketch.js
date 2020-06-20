@@ -114,7 +114,7 @@ function mouseReleased () {
 }
 
 function loadimgs(){
-  // save the data in localstorage and reload the page, so that next time on page load the images will be read from localstorage and initiated in p5
+  // save the data in localstorage and reload the page, so that next time on pageload the images will be read from localstorage and initiated in p5
   localStorage.setItem("urls",textarea.value());
   location.reload();
 }
