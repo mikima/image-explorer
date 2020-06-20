@@ -58,7 +58,7 @@ function setup() {
   sel.option(NORMAL);
   sel.selected(NORMAL);
   sel.changed(mySelectEvent);
-  sel.position(canvasspace, (canvasspace / 2)+160);
+  sel.position(canvasspace, (canvasspace / 2)+canvasspacey);
 
   //Display the textarea and assign a class
   textarea = createElement("textarea");

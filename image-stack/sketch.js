@@ -1,6 +1,6 @@
 let stacksize = 1000; // define the size of the image stack
 let canvasspace = 100; // define the space around the image stack
-let canvasspacey = 160;
+let canvasspacey = 160; // additional spacing for image URL input box
 let canvassize = stacksize + (canvasspace * 2);
 let clearness = 100; // set transparency levels
 let savebutton, textarea, loadbutton, urls;  // create save button, load button, text box and urls
