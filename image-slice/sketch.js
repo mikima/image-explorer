@@ -19,7 +19,11 @@ function preload() {
 	  urls = urls.split("\n"); //every line contains a new url
 	  for(let i=0; i<urls.length; i++){
 		if(urls[i].trim()!=""){
-		  imagesStack[i] = loadImage(urls[i]); //load images from localstorage lines
+		  imagesStack[i] = loadImage(urls[i],null,(e)=>{
+			  alert("One or more urls failed to load. Please try again or double check the urls.");
+			  localStorage.removeItem("urls");
+			  location.reload();
+		  }); //load images from localstorage lines
 		}
 	  }
   }
