@@ -29,7 +29,7 @@ function setup() {
 
   // create and position slider
   slider = createSlider(0, 255, 100);
-  slider.position(canvasspace, canvasspace/2);
+  slider.position(canvasspace, canvasspace/2+canvasspacey);
   slider.style('width', '400px');
 
   //
