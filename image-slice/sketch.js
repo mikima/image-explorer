@@ -1,9 +1,9 @@
 let stacksize = 1000; // define the size of the image stack
 let canvasspace = 100; // define the space around the image stack
-let canvasspacey = 160;
+let canvasspacey = 160; // additional spacing for image URL input box
 let canvassize = stacksize + (canvasspace * 2);
 let clearness = 100; // set transparency levels
-let savebutton, textarea, loadbutton, urls;
+let savebutton, textarea, loadbutton, urls; // create save button, load button, text box and urls
 let savebuttonx = 220;
 let savebuttony = (canvasspace/2)+160;
 let imagecount = 0;
@@ -13,6 +13,7 @@ let imagesegment;
 let sel;
 
 let imagesStack = []; // set up array
+
 function preload() {
   urls = localStorage.getItem("urls"); //load previously saved data from localstorage
   if(urls){ //skips if no data before
@@ -30,11 +31,15 @@ function preload() {
 }
 
 function setup() {
-  //count number of images
+
+  //count total number of images to determine width of image slices
   imagenumber = imagesStack.length;
   imagesegment = stacksize/imagenumber;
+
+  // print so can be checked in console
   print(imagesegment);
 
+  // create dropdown box to select blend mode
   sel = createSelect();
   sel.option(BLEND);
   sel.option(DARKEST);
@@ -65,11 +70,12 @@ function setup() {
 	  localStorage.removeItem("urls");
   }
 
-  //Display the loadimages button and bind its event handler
+  // display button to load images and bind its event handler
   loadbutton = createButton('Load Images');
   loadbutton.position(canvasspace, savebuttony-40);
   loadbutton.mousePressed(loadimgs);
 
+  // display button to save images
   savebutton = createButton('Save image');
   savebutton.position(savebuttonx, savebuttony);
   savebutton.mousePressed(saveimg);
@@ -84,6 +90,7 @@ function setup() {
   // istead of rewriting the operation for each image,
   // we can use a for loop.
   // for each image in the 'imagesStack' array, we perform the same operations
+
   for(let i = 0; i < imagesStack.length; i++) {
 
 	  // load the image contained in the 'imagesStack' array at index 'i'
@@ -138,7 +145,7 @@ function mySelectEvent () {
 }
 
 function loadimgs(){
-  //Simply save the data in localstorage and reload the page, so that nexttime on pageload the images will be read from localstorage and initiated in p5
+  // save the data in localstorage and reload the page, so that next time on page load the images will be read from localstorage and initiated in p5
   localStorage.setItem("urls",textarea.value());
   location.reload();
 }
